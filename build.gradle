@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'by.sologub'
+group 'by.sokalau'
 version '1.0-SNAPSHOT'
 
 repositories {

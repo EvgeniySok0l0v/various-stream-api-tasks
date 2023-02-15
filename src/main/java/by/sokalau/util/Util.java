@@ -17,10 +17,11 @@ import java.util.List;
 import java.util.Locale;
 
 public class Util {
-    public static final String animalsDataFileName = "src\\main\\resources\\animals.json";
-    public static final String recruitsDataFileName = "src\\main\\resources\\recruits.json";
-    public static final String carsDataFileName = "src\\main\\resources\\cars.json";
-    public static final String flowersDataFileName = "src\\main\\resources\\flowers.json";
+    //Тут поменял слеши \\ на // , что бы моя ubuntu нашла файлы
+    public static final String animalsDataFileName = "src//main//resources//animals.json";
+    public static final String recruitsDataFileName = "src//main//resources//recruits.json";
+    public static final String carsDataFileName = "src//main//resources//cars.json";
+    public static final String flowersDataFileName = "src//main//resources//flowers.json";
     public static final SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 
     public static List<Animal> getAnimals() throws IOException {
@@ -43,6 +44,13 @@ public class Util {
         });
     }
 
+    /*
+        тут кст теряем жителей под id 41,142,201,300,400,500,600,700,800,900
+        для task13, допустим они бездомные и их не спасаем(
+        что бы не терять :
+        new House(2, "Civil building", personList.subList(41, 141)),
+        new House(2, "Civil building", personList.subList(40, 141)),
+     */
     public static List<House> getHouses() throws IOException {
         List<Person> personList = getPersons();
         return List.of(
